@@ -3,6 +3,7 @@ import streamlit as st
 
 from utils.parse import parse_resume
 from utils.process_async import process_async_response
+from mcp_client.mcp_client import run_mcp_client
 
 nest_asyncio.apply()
 
@@ -48,8 +49,8 @@ if prompt := st.chat_input(
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        response = process_async_response(
-            processed_prompt, st.session_state.agent_message_history
+        response = st.write_stream(
+            run_mcp_client(processed_prompt, st.session_state.agent_message_history)
         )
 
     # Add assistant response to chat history
