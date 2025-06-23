@@ -34,10 +34,10 @@ env = {
 # Get the absolute path to the MCP server script
 current_dir = Path(__file__).parent.parent
 mcp_server_path = current_dir / "hirestream_mcp_server" / "hirestream_mcp.py"
-mcp_servers = [MCPServerStdio("python", [str(mcp_server_path)], env=env)]
-# import sys
+# mcp_servers = [MCPServerStdio("python", [str(mcp_server_path)], env=env)]
+import sys
 
-# mcp_servers = [MCPServerStdio(sys.executable, [str(mcp_server_path)], env=env)]
+mcp_servers = [MCPServerStdio(sys.executable, [str(mcp_server_path)], env=env)]
 
 # Set up Agent with Server
 agent = Agent(
