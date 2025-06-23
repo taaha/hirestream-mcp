@@ -7,18 +7,18 @@
 # you might consider using the `subprocess` module to run shell commands.
 # Here's an example of how you could do that:
 
-import subprocess
+# import subprocess
 
 
-def install_requirements():
-    try:
-        subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
-    except subprocess.CalledProcessError as e:
-        print(f"An error occurred while installing requirements: {e}")
+# def install_requirements():
+#     try:
+#         subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
+#     except subprocess.CalledProcessError as e:
+#         print(f"An error occurred while installing requirements: {e}")
 
 
-# Call the function to install requirements
-install_requirements()
+# # Call the function to install requirements
+# install_requirements()
 
 # server.py
 import os
