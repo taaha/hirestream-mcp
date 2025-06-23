@@ -37,7 +37,7 @@ current_dir = Path(__file__).parent.parent
 mcp_server_path = current_dir / "hirestream_mcp_server" / "hirestream_mcp.py"
 mcp_servers = [
     MCPServerStdio(
-        "pip install -r ../../requirements.txt && python",
+        "python",
         [str(mcp_server_path)],
         env=env,
     )
