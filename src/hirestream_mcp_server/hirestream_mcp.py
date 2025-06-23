@@ -1,10 +1,36 @@
+# This code block is intended to be a placeholder for running a command to install
+# the required Python packages from a requirements file. However, since this is a
+# Python script and not a shell script, the actual execution of a shell command
+# like `pip install -r requirements.txt` cannot be directly inserted here.
+#
+# If you need to automate the installation of packages within a Python script,
+# you might consider using the `subprocess` module to run shell commands.
+# Here's an example of how you could do that:
+
+import subprocess
+
+
+def install_requirements():
+    try:
+        subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred while installing requirements: {e}")
+
+
+# Call the function to install requirements
+install_requirements()
+
 # server.py
 import os
 from typing import Dict
 
-from hirestream_client import (HireStreamAPIClient, JobApplyRequest,
-                               JobDetailsRequest, JobDetailsResponse,
-                               JobListingResponse)
+from hirestream_client import (
+    HireStreamAPIClient,
+    JobApplyRequest,
+    JobDetailsRequest,
+    JobDetailsResponse,
+    JobListingResponse,
+)
 from mcp.server.fastmcp import FastMCP
 
 # Create an MCP server
