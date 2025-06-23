@@ -2,7 +2,6 @@ import nest_asyncio
 import streamlit as st
 
 from utils.parse import parse_resume
-from utils.process_async import process_async_response
 from mcp_client.mcp_client import run_mcp_client
 
 nest_asyncio.apply()
