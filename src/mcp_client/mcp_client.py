@@ -1,4 +1,5 @@
 # PydanticAI Agent with MCP
+import httpx
 from pathlib import Path
 from typing import Dict, List
 
