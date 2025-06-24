@@ -1,4 +1,5 @@
 # PydanticAI Agent with MCP
+import sys
 from pathlib import Path
 from typing import Dict, List
 
@@ -6,12 +7,9 @@ import logfire
 from decouple import config
 from pydantic_ai import Agent
 from pydantic_ai.mcp import MCPServerStdio
-from pydantic_ai.messages import (
-    FunctionToolCallEvent,
-    FunctionToolResultEvent,
-    PartDeltaEvent,
-    TextPartDelta,
-)
+from pydantic_ai.messages import (FunctionToolCallEvent,
+                                  FunctionToolResultEvent, PartDeltaEvent,
+                                  TextPartDelta)
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
@@ -34,9 +32,6 @@ env = {
 # Get the absolute path to the MCP server script
 current_dir = Path(__file__).parent.parent
 mcp_server_path = current_dir / "hirestream_mcp_server" / "hirestream_mcp.py"
-# mcp_servers = [MCPServerStdio("python", [str(mcp_server_path)], env=env)]
-import sys
-
 mcp_servers = [MCPServerStdio(sys.executable, [str(mcp_server_path)], env=env)]
 
 # Set up Agent with Server

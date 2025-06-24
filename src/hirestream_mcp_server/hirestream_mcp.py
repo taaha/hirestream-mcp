@@ -2,13 +2,9 @@
 import os
 from typing import Dict
 
-from hirestream_client import (
-    HireStreamAPIClient,
-    JobApplyRequest,
-    JobDetailsRequest,
-    JobDetailsResponse,
-    JobListingResponse,
-)
+from hirestream_client import (HireStreamAPIClient, JobApplyRequest,
+                               JobDetailsRequest, JobDetailsResponse,
+                               JobListingResponse)
 from mcp.server.fastmcp import FastMCP
 
 # Create an MCP server
